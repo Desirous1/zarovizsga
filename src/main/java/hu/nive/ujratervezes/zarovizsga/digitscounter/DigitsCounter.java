@@ -6,14 +6,15 @@ import java.util.Set;
 public class DigitsCounter {
 
     public int getCountOfDigits(String s) {
-        Set<Integer> list = new HashSet<>();
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        Set<Character> chars = new HashSet<>();
         for (char oi : s.toCharArray()) {
-            try {
-                int part = Character.getNumericValue(oi);
-                list.add(part);
-            } catch (NumberFormatException nf) {
+            if (Character.isDigit(oi)) {
+                chars.add(oi);
             }
         }
-        return list.size();
+        return chars.size();
     }
 }

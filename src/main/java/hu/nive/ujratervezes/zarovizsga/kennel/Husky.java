@@ -13,6 +13,6 @@ public class Husky extends Dog{
 
     @Override
     public void play(int hours) {
-       happiness = happiness * (hours * 3);
+       happiness = happiness + (hours * 3);
     }
 }
